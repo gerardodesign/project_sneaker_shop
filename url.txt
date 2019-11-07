@@ -1,0 +1,15 @@
+http://localhost/project_sneaker_shop/html/form_login.html
+
+SELECT s.model,c.description,b.description from sneakers s, brands b, colors c where s.id_brands=b.id_brand and s.id_colors=c.id_colors
+
+insert into sneakers (model,price,id_colors,id_brands,image,observation) values ('prueba',0,1,1,'prueba','prueba')
+
+select s.model, s.price, s.image, s.observation, c.description, b.description, s.initial_date from sneakers s, colors c, brands b where c.id_colors=s.id_colors and b.id_brand=s.id_brands order by s.initial_date;
+
+select s.model, s.price, s.image, s.observation, c.description, b.description, s.initial_date from sneakers s inner join brands b on s.id_brands=b.id_brand inner join colors c on s.id_colors=c.id_colors order by s.initial_date; 
+
+SELECT s.id_sneakers, s.model, s.price, c.description, b.description FROM sneakers s INNER JOIN brands b on s.id_brands=b.id_brand INNER JOIN colors c on s.id_colors=c.id_colors;
+
+SELECT s.id_sneakers, s.model, s.price,s.observation,c.id_colors, c.description,b.id_brand, b.description FROM sneakers s INNER JOIN brands b on s.id_brands=b.id_brand INNER JOIN colors c on s.id_colors=c.id_colors;
+
+SELECT s.id_sneakers as sneakers, s.model as model, s.price as price,s.observation as observation,c.id_colors as color, c.description as colors,b.id_brand as brand, b.description as brands FROM sneakers s INNER JOIN brands b on s.id_brands=b.id_brand INNER JOIN colors c on s.id_colors=c.id_colors WHERE id_sneakers=18;
